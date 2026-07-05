@@ -1,0 +1,51 @@
+2026-07-05 18:24:54,550 | INFO | POST /api/upload called
+2026-07-05 18:24:54,550 | INFO | Uploading file: customer.csv
+2026-07-05 18:24:54,550 | INFO | File saved successfully: customer.csv
+2026-07-05 18:24:54,567 | INFO | Starting database insertion for customer.csv. Valid records: 10
+2026-07-05 18:24:54,580 | INFO | Customer inserted successfully: C001
+2026-07-05 18:24:54,580 | INFO | Customer inserted successfully: C002
+2026-07-05 18:24:54,587 | INFO | Customer inserted successfully: C003
+2026-07-05 18:24:54,587 | INFO | Customer inserted successfully: C004
+2026-07-05 18:24:54,594 | INFO | Customer inserted successfully: C005
+2026-07-05 18:24:54,594 | INFO | Customer inserted successfully: C006
+2026-07-05 18:24:54,594 | INFO | Customer inserted successfully: C007
+2026-07-05 18:24:54,602 | INFO | Customer inserted successfully: C008
+2026-07-05 18:24:54,602 | INFO | Customer inserted successfully: C009
+2026-07-05 18:24:54,609 | INFO | Customer inserted successfully: C010
+2026-07-05 18:24:54,609 | INFO | customer.csv Upload Summary | Total=10 | Inserted=10 | Rejected=0
+2026-07-05 18:24:54,609 | INFO | Uploading file: policy.csv
+2026-07-05 18:24:54,609 | INFO | File saved successfully: policy.csv
+2026-07-05 18:24:54,622 | WARNING | policy.csv - Duplicate policy_id: P1002
+2026-07-05 18:24:54,622 | INFO | Starting database insertion for policy.csv. Valid records: 11
+2026-07-05 18:24:54,629 | INFO | Policy inserted successfully: P1001
+2026-07-05 18:24:54,633 | INFO | Policy inserted successfully: P1002
+2026-07-05 18:24:54,636 | INFO | Policy inserted successfully: P1003
+2026-07-05 18:24:54,636 | INFO | Policy inserted successfully: P1004
+2026-07-05 18:24:54,643 | INFO | Policy inserted successfully: P1005
+2026-07-05 18:24:54,643 | INFO | Policy inserted successfully: P1006
+2026-07-05 18:24:54,643 | INFO | Policy inserted successfully: P1007
+2026-07-05 18:24:54,651 | INFO | Policy inserted successfully: P1008
+2026-07-05 18:24:54,651 | INFO | Policy inserted successfully: P1009
+2026-07-05 18:24:54,657 | INFO | Policy inserted successfully: P1010
+2026-07-05 18:24:54,657 | WARNING | Policy insert failed: P1011 | FOREIGN KEY constraint failed
+2026-07-05 18:24:54,657 | INFO | policy.csv Upload Summary | Total=12 | Inserted=10 | Rejected=2
+2026-07-05 18:24:54,657 | INFO | Uploading file: claims.csv
+2026-07-05 18:24:54,657 | INFO | File saved successfully: claims.csv
+2026-07-05 18:24:54,664 | WARNING | claims.csv - Negative loss_amount: -5000.0
+2026-07-05 18:24:54,670 | WARNING | claims.csv - Future loss_date: 2027-01-01
+2026-07-05 18:24:54,671 | WARNING | claims.csv - Duplicate claim_id: CL001
+2026-07-05 18:24:54,671 | INFO | Starting database insertion for claims.csv. Valid records: 12
+2026-07-05 18:24:54,678 | INFO | Claim inserted successfully: CL001
+2026-07-05 18:24:54,685 | INFO | Claim inserted successfully: CL002
+2026-07-05 18:24:54,688 | INFO | Claim inserted successfully: CL003
+2026-07-05 18:24:54,694 | INFO | Claim inserted successfully: CL004
+2026-07-05 18:24:54,696 | INFO | Claim inserted successfully: CL005
+2026-07-05 18:24:54,699 | INFO | Claim inserted successfully: CL008
+2026-07-05 18:24:54,704 | WARNING | Claim rejected: CL009 - Claim date earlier than policy issue date
+2026-07-05 18:24:54,705 | INFO | Claim inserted successfully: CL010
+2026-07-05 18:24:54,705 | WARNING | Claim rejected: CL011 - Policy not found
+2026-07-05 18:24:54,711 | WARNING | Claim rejected: CL012 - Claim date earlier than policy issue date
+2026-07-05 18:24:54,713 | INFO | Claim inserted successfully: CL013
+2026-07-05 18:24:54,713 | INFO | Claim inserted successfully: CL014
+2026-07-05 18:24:54,719 | INFO | claims.csv Upload Summary | Total=15 | Inserted=9 | Rejected=6
+2026-07-05 18:24:54,719 | INFO | CSV upload completed successfully

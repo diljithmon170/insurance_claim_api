@@ -1,20 +1,20 @@
+from contextlib import asynccontextmanager
 from fastapi import FastAPI
-from app.database.database import create_tables
-from app.api.claim_routes import router
+from app.models import create_tables
+from app.routes import router
+from datetime import datetime
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    create_tables()      # Runs once when the app starts
+    yield                # Application runs here
+    # Optional cleanup code here
 
 app = FastAPI(
-    title="Insurance Claim API"
+    title="Insurance Claim API",
+    lifespan=lifespan
 )
 
-
-@app.on_event("startup")
-def startup():
-    create_tables()
-
+app.state.start_time = datetime.now()
 
 app.include_router(router)
-
-
-@app.get("/")
-def home():
-    return {"message": "Insurance Claim API"}
