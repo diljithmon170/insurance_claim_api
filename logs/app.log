@@ -49,3 +49,17 @@
 2026-07-05 18:24:54,713 | INFO | Claim inserted successfully: CL014
 2026-07-05 18:24:54,719 | INFO | claims.csv Upload Summary | Total=15 | Inserted=9 | Rejected=6
 2026-07-05 18:24:54,719 | INFO | CSV upload completed successfully
+2026-07-05 18:49:06,879 | INFO | GET /api/claims/CL003
+2026-07-05 18:49:06,879 | INFO | Fetching claim: CL003
+2026-07-05 18:49:43,376 | INFO | GET /api/customers/top?n=10
+2026-07-05 18:49:43,377 | INFO | Fetching top 10 customers
+2026-07-05 18:50:22,278 | INFO | GET /api/reports/state
+2026-07-05 18:50:22,279 | INFO | Generating state report
+2026-07-05 18:50:36,006 | INFO | GET /api/health
+2026-07-05 18:50:36,007 | INFO | Performing health check
+2026-07-05 18:50:45,682 | INFO | GET /api/reports/top-cities
+2026-07-05 18:50:45,682 | INFO | Generating Top Cities report
+2026-07-05 18:51:01,433 | INFO | GET /api/reports/claims-per-state
+2026-07-05 18:51:01,433 | INFO | Generating Claims Per State report
+2026-07-05 19:04:29,506 | INFO | GET /api/customers/top?n=10
+2026-07-05 19:04:29,506 | INFO | Fetching top 10 customers

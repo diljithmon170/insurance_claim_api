@@ -207,9 +207,9 @@ def get_fraud_status(session, customer_id):
     )
 
     if claim_count > 5:
-        return "Potential Fraud"
+        return 1
 
-    return "Normal"
+    return 0
 
 # Calculate Payouts
 def calculate_payout(claim, policy, customer):
@@ -300,7 +300,7 @@ def get_claim_details(claim_id: str):
             "state": customer.state
         },
         "calculated_payout": payout,
-        "fraud_status": fraud_status
+        **({"fraud_status": "Potential Fraud"} if fraud_status == 1 else {})
     }
 
     session.close()
@@ -386,7 +386,7 @@ def get_claims(
             "loss_amount": claim.loss_amount,
             "cause": claim.cause,
             "payout": payout,
-            "fraud_status": fraud_status
+            **({"fraud_status": "Potential Fraud"} if fraud_status == 1 else {})
         })
 
     # ---------------- Sorting ----------------
@@ -428,16 +428,18 @@ def get_top_customers(n):
 
         if customer.customer_id not in customer_payouts:
 
+            fraud_status = get_fraud_status(
+                session,
+                customer.customer_id
+                )            
+
             customer_payouts[customer.customer_id] = {
                 "customer_id": customer.customer_id,
                 "name": customer.name,
                 "city": customer.city,
                 "state": customer.state,
                 "total_payout": 0,
-                "fraud_status": get_fraud_status(
-                session,
-                customer.customer_id
-                )
+                **({"fraud_status": "Potential Fraud"} if fraud_status == 1 else {})
             }
 
         customer_payouts[customer.customer_id]["total_payout"] += payout
